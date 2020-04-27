@@ -25,9 +25,10 @@
     * 如果有兩個以上會有一個簡單的選單. 輸入0~n按下enter. 如果沒輸入按enter, 預設是第1個(index=0)
     * 如果Password欄位是.pem結尾, 就以ssh開啟. 否則用rdp開啟.
     * 程式的 title改為檔案的profile檔名(.aws前面)加上/credential的profile名稱, 這樣應該比較好識別
-    * 開關機按鈕按下去會有計數器, 狀態列除了 stopped, running外, 開關機按鈕按下去後, 計數器開始跑(每2秒更新一次), b狀態像pending, stopping也會顯示.
-    * 開關按鈕, 連線按鈕按下去後不會像當機一樣卡住. 按下去即彈起來. 連線部份也是跑在另一個thread.
-    * 實際執行的ssh/rdp指令會存成一個%userprofile%\.aws\executedCmd.aws.txt 檔案. 有需要時再打開來用. 就不再在命令列印出來了.
+    * 開關機按鈕按下去會有計數器, 狀態列除了 stopped, running外, 開關機按鈕按下去後, 計數器開始跑(每2秒更新一次)
+    * 除了開機 running, 關機 stopped, 其他的狀態像 pending 或 stopping 也都會在目前狀態中顯示.
+    * 開關按鈕, 連線按鈕按下去後即彈起來. 連線部份也是跑在另一個thread. 不再會像當機一樣卡住. 
+    * 實際執行的ssh/rdp指令會存成一個%userprofile%\.aws\executedCmd.aws.txt 檔案. 有需要時(在其他軟體像putty裡)打開來用. 
 
 - [x] --- 也將先前的說明修改如下 ---
 
@@ -38,12 +39,12 @@
     * 同時, 要用aws cli設定 AWS Configure, 這樣會在 %userprofile%\.aws\產生 credentials這個檔. 
 
         ** [profile username]
-        ** aws_access_key_id = AKcccccccxxxxxxxx4I
-        ** aws_secret_access_key = nxxx88xxxxxxud2KAxm
+        aws_access_key_id = AKcccccccxxxxxxxx4I
+        aws_secret_access_key = nxxx88xxxxxxud2KAxm
 
     如果有多個 profile 程式會選用不同的 credential,
 
-        ** self.session = boto3.Session(profile_name = self.profileName)
+        self.session = boto3.Session(profile_name = self.profileName)
 
 - [x] --- 執行環境需求 ---
 
