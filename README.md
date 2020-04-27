@@ -18,6 +18,8 @@
     you create each of the EC2 instances you have with a profile in %userprofile%\.aws
     folder by setting their credential profile name, instance ID, region and password.
 
+    ![關機狀態](https://github.com/spectreConstantine/amazonWebServices.ec2.python/blob/master/2020-04-27_094454.png)
+
 - [x] --- 摘要幾個修改 ---
 
     * 設定檔改為需要加上 .aws 副檔名. 之前的版本就是沒有 .aws, 這樣是為了區隔所有放在 %userprofile%\.aws\ 的其他的檔案.
