@@ -43,9 +43,8 @@
         * aws_secret_access_key = nxxx88xxxxxxud2KAxm
    
     * 如果有多個 profile 程式會選用不同的 credential,
-        ```python 
+
         self.session = boto3.Session(profile_name = self.profileName)
-        '''
 
 - [x] --- 執行環境需求 ---
 
