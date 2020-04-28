@@ -30,7 +30,7 @@
     * 開關機按鈕按下去會有計數器, 狀態列除了 stopped, running外, 開關機按鈕按下去後, 計數器開始跑(每2秒更新一次)
     * 除了開機 running, 關機 stopped, 其他的狀態像 pending 或 stopping 也都會在目前狀態中顯示.
     * 開關按鈕, 連線按鈕按下去後即彈起來. 連線部份也是跑在另一個thread. 不再會像當機一樣卡住. 
-    * 連線時的ssh/rdp指令會存成一個%userprofile%\.aws\executedCmd.aws.txt檔案.有需要時打開來用(像在其他軟體putty裡). 
+    * 連線時的ssh/rdp指令會存成一個%userprofile%\.aws\executedCmd.(.txt檔案.有需要時打開來用(像在其他軟體putty裡). 
 
 - [x] --- 也將先前的說明修改如下 ---
 
