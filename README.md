@@ -49,4 +49,4 @@
 
     * 電腦裡要安裝Python 3.7.7 (這是我用的版本, 其他版本也許可以跑但沒實測過).
     * 同時要安裝 boto3 (使用命令列 pip install boto3), 其他都是內建的. 
-    * 用python -OO -m py_compile constantine_aws_rdp_UIv1.py 可以編譯成.pyc (跑完後在__pycache__目錄下, 可以更名, 可以移到桌面跑).
+    * 用python -OO -m py_compile Miranda_Ubuntu_aws_sshrdp_UIv7.py 可以編譯成.pyc (跑完後在__pycache__目錄下, 可以更名, 可以移到桌面跑).
