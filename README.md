@@ -29,7 +29,7 @@
     * 然後在主程式會自動去%userprofile%/.aws/裡找所有副檔名為.aws的檔案. 程式如果只找到1個就直接打開。
     * 客製的文字檔中, 如果 SSH 中, Password放的是 PEM 的路徑, 但RDP中, Password放的是 PEM 已解開的密碼。
     * 如果使用 ssh 連線, 設定檔裡的 "Password" 需設定 .pem 的檔案位置, 例如 (* 注意, 使用 ssh 時 Password 為 .pem 的檔案位置)
-      * 設定檔格式 ssh 為: {"Profile":"profile username", "Region":"ap-east-2", "ID":"i-xxx", "Password":"C://Users//username//.awscredentials//Ubuntu.pem"}')
+      * 設定檔格式 ssh 為: {"Profile":"profile username", "Region":"ap-east-2", "ID":"i-01abc234defg5h6j7", "Password":"C://Users//username//.awscredentials//Ubuntu.pem"}')
     * 如果使用 rdp 連線, 設定檔裡的 "Password" 需則在 aws console 裡使用 .pem 將密碼解密為明碼後寫在設定檔裡 
       * 設定檔格式 rdp 為:{"Profile":"profile username", "Region":"ap-east-2", "ID":"i-01abc234defg5h6j7", "Password":"@?b!)axcyNKi1SqICn9oSygPx8k(Zm1e"}')             
     * 同時, 要用aws cli設定 AWS Configure, 這樣會在 %userprofile%/.aws/產生 credentials這個檔。
