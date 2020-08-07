@@ -40,10 +40,10 @@
     * 客製的文字檔中, 如果 SSH 中, Password放的是 PEM 的路徑, 但RDP中, Password放的是 PEM 已解開的密碼.
     * 同時, 要用aws cli設定 AWS Configure, 這樣會在 %userprofile%\.aws\產生 credentials這個檔.
     * [profile username]
-    * aws_access_key_id = AKcccccccxxxxxxxx4I
-    * aws_secret_access_key = nxxx88xxxxxxud2KAxm
+      * aws_access_key_id = AKcccccccxxxxxxxx4I
+      * aws_secret_access_key = nxxx88xxxxxxud2KAxm
     * 如果有多個 profile 程式會選用不同的 credential.
-    * self.session = boto3.Session(profile_name = self.profileName)
+      * self.session = boto3.Session(profile_name = self.profileName)
 
 - [x] --- 執行環境需求 ---
 
