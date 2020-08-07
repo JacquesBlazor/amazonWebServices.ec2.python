@@ -20,9 +20,24 @@
 
     ![關機狀態](https://github.com/spectreConstantine/amazonWebServices.ec2.python/blob/master/2020-04-27_094454.png)
 
+
+- [x] --- 程式使用說明如下 ---
+
+    * 參考 執行環境需求 安裝 Python3 及 boto 套件。
+    * 此程式需有一個自己客製的文字檔, 放在 %userprofile%/.aws/裡。
+    * 取個名字, 副檔名需為 .aws, 比如username1.aws, 那就是 %userprofile%/.aws/username1.aws。
+    * 然後在主程式會自動去%userprofile%/.aws/裡找所有副檔名為.aws的檔案. 程式如果只找到1個就直接打開。
+    * 客製的文字檔中, 如果 SSH 中, Password放的是 PEM 的路徑, 但RDP中, Password放的是 PEM 已解開的密碼。
+    * 同時, 要用aws cli設定 AWS Configure, 這樣會在 %userprofile%/.aws/產生 credentials這個檔。
+      * [profile username]
+      * aws_access_key_id = AKcccccccxxxxxxxx4I
+      * aws_secret_access_key = nxxx88xxxxxxud2KAxm
+    * 如果有多個 profile 程式會選用不同的 credential。因此在你的檔案裡的profile和credential的profile名稱要對應。
+      * self.session = boto3.Session(profile_name = self.profileName)
+
 - [x] --- 摘要幾個修改 ---
 
-    * 設定檔改為需要加上 .aws 副檔名. 之前的版本就是沒有 .aws, 這樣是為了區隔所有放在 %userprofile% \.aws\ 的其他的檔案。
+    * 設定檔改為需要加上 .aws 副檔名. 之前的版本就是沒有 .aws, 這樣是為了區隔所有放在 %userprofile%/.aws/ 的其他的檔案。
     * 像是如果有多台機器, 可以在 .aws 目錄下新增多個 .aws 檔案. 程式如果只找到1個就直接打開。
     * 如果有兩個以上會有一個簡單的選單. 輸入0~n按下enter. 如果沒輸入按enter, 預設是第1個(index=0)。
     * 如果Password欄位是.pem結尾, 就以ssh開啟. 否則用rdp開啟。
@@ -30,20 +45,8 @@
     * 開關機按鈕按下去會有計數器, 開關機按鈕按下後, 每 2 秒鐘 (2000 ms) 會在按鈕上更新一次計數器。
     * 狀態列除了開機 running, 關機 stopped, 外, 其他的狀態像 pending 或 stopping 也都會在目前狀態中顯示。
     * 開關按鈕, 連線按鈕按下去後即彈起來. 連線部份也是跑在另一個thread. 不再會像當機一樣卡住。
-    * 連線時的ssh/rdp指令會存成一個%userprofile%\.aws\executedCmd.(.txt檔案.有需要時打開來用(像在其他軟體putty裡)。
+    * 連線時的ssh/rdp指令會存成一個%userprofile%/.aws/executedCmd.(.txt檔案.有需要時打開來用(像在其他軟體putty裡)。
 
-- [x] --- 程式邏輯說明如下 ---
-
-    * 此程式需有一個自己客製的文字檔, 放在 %userprofile%\.aws\裡.
-    * 取個名字, 副檔名需為 .aws, 比如username1.aws, 那就是 %userprofile%\.aws\username1.aws。
-    * 然後在主程式會自動去%userprofile%\.aws\裡找所有副檔名為.aws的檔案. 程式如果只找到1個就直接打開。
-    * 客製的文字檔中, 如果 SSH 中, Password放的是 PEM 的路徑, 但RDP中, Password放的是 PEM 已解開的密碼。
-    * 同時, 要用aws cli設定 AWS Configure, 這樣會在 %userprofile%\.aws\產生 credentials這個檔。
-      * [profile username]
-      * aws_access_key_id = AKcccccccxxxxxxxx4I
-      * aws_secret_access_key = nxxx88xxxxxxud2KAxm
-    * 如果有多個 profile 程式會選用不同的 credential。因此在你的檔案裡的profile和credential的profile名稱要對應。
-      * self.session = boto3.Session(profile_name = self.profileName)
 
 - [x] --- 執行環境需求 ---
 
