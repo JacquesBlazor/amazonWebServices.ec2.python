@@ -45,7 +45,7 @@
     * 如果有兩個以上會有一個簡單的選單. 輸入0~n按下enter. 如果沒輸入按enter, 預設是第1個(index=0)。
     * 如果Password欄位是.pem結尾, 就以ssh開啟. 否則用rdp開啟。
     * 程式的 title改為檔案的profile檔名(.aws前面)加上/credential的profile名稱, 這樣應該比較好識別。
-    * 開關機按鈕按下去會有計數器, 開關機按鈕按下後, 每 2 秒鐘 (2000 ms) 會在按鈕上更新狀態及次計數器。
+    * 開關機按鈕按下去會有計數器, 開關機按鈕按下後, 每 2 秒鐘 (2000 ms) 會在更新伺服器狀態及次計數器計時。
     * 狀態列除了開機 running, 關機 stopped, 外, 其他的狀態像 pending 或 stopping 也都會在目前狀態中顯示。
     * 開關按鈕, 連線按鈕按下去後即彈起來. 連線部份也是跑在另一個thread. 不再會像當機一樣卡住。
     * 連線時的ssh/rdp指令會存成一個%userprofile%/.aws/executedCmd.(.txt檔案.有需要時打開來用(像在其他軟體putty裡)。
