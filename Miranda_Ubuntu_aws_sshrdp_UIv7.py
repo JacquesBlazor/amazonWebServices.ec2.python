@@ -1,4 +1,4 @@
-# --- The MIT License (MIT) Copyright (c) alvinlin, Sat May 3 02:14:00am 2020 ---
+# --- The MIT License (MIT) Copyright (c) Sat May 3 02:14:00am 2020 ---
 
 # 此程的功能為提供使用 Amazon Web Service (AWS) 的 EC2 服務的使用者一個簡便的使用者界面
 # 能夠將每台EC2 Instance(虛擬機器)用Instance ID做成設定檔在使用時可以快速方便地開或/關機
